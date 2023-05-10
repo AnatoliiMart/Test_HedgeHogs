@@ -1,13 +1,11 @@
-﻿using System.Drawing;
-
-namespace Test_HedgeHogs
+﻿namespace Test_HedgeHogs
 {
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Attempts used: " + CalcHedgehogs(12,0,12, 0));
+            Console.WriteLine("Attempts used: " + CalcHedgehogs(12,0,15, 1));
         }
         static public int CalcHedgehogs(uint rHedgehogs, uint gHedgehogs, uint bHedgehogs, int color )
         {
@@ -17,18 +15,13 @@ namespace Test_HedgeHogs
             {
                 case 0:
                     if (hedgehogs[1] == 0 && hedgehogs[2] == 0)
-                    {
-                        result = -1;
-                        break;
-                    }
+                         return -1;
+                        
                     while (hedgehogs[1] >= 0 && hedgehogs[2] >= 0)
                     {
 
                         if (hedgehogs[1] == 1 && hedgehogs[2] == 0 || hedgehogs[1] == 0 && hedgehogs[2] == 1)
-                        {
-                            result = -1;
-                            break;
-                        }
+                            return -1;
 
                         if (hedgehogs[1] > 0 && hedgehogs[2] > 0)
                         {
@@ -52,25 +45,17 @@ namespace Test_HedgeHogs
                             result++;
                         }
                         else if (hedgehogs[1] == 0 && hedgehogs[2] == 0)
-                        {
                             break;
-                        }
                     }
                     break;
                 case 1:
                     if (hedgehogs[0] == 0 && hedgehogs[2] == 0)
-                    {
-                        result = -1;
-                        break;
-                    }
+                        return -1;
 
                     while (hedgehogs[0] >= 0 && hedgehogs[2] >= 0)
                     {
                         if (hedgehogs[0] == 1 && hedgehogs[2] == 0 || hedgehogs[0] == 0 && hedgehogs[2] == 1)
-                        {
-                            result = -1;
-                            break;
-                        }
+                            return -1;
 
                         if (hedgehogs[0] > 0 && hedgehogs[2] > 0)
                         {
@@ -94,25 +79,17 @@ namespace Test_HedgeHogs
                             result++;
                         }
                         else if (hedgehogs[0] == 0 && hedgehogs[2] == 0)
-                        {
                             break;
-                        }
                     }
                     break;
                 case 2:
                     if (hedgehogs[0] == 0 && hedgehogs[1] == 0)
-                    {
-                        result = -1;
-                        break;
-                    }
+                        return -1;
 
                     while (hedgehogs[0] >= 0 && hedgehogs[1] >= 0)
                     {
                         if (hedgehogs[0] == 1 && hedgehogs[1] == 0 || hedgehogs[0] == 0 && hedgehogs[1] == 1)
-                        {
-                            result = -1;
-                            break;
-                        }
+                            return -1;
 
                         if (hedgehogs[0] > 0 && hedgehogs[1] > 0)
                         {
@@ -136,12 +113,8 @@ namespace Test_HedgeHogs
                             result++;
                         }
                         else if (hedgehogs[0] == 0 && hedgehogs[1] == 0)
-                        {
                             break;
-                        }
                     }
-                    break;
-                default:
                     break;
             }
 
